@@ -1,0 +1,40 @@
+<Page x:Class="KurobaChan.Pages.SoftwareAdd.Pge_1SoftwareLocate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:KurobaChan.Pages.SoftwareAdd"
+      mc:Ignorable="d"
+      Height="415" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBlock x:Name="Tbk_Content" TextWrapping="WrapWithOverflow" Margin="20" FontSize="10pt">
+			Please select the location of the external program you want to add.<LineBreak />
+			<LineBreak />
+			If the specified program needs to run with Locale Emulator, the actual location of the program should be specified here.<LineBreak />
+			You will need to enable Locale Emulator support later.
+		</TextBlock>
+		<Grid Grid.Row="1" x:Name="Grd_Locate" Margin="20" Height="25px">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="20px" />
+				<ColumnDefinition Width="75px" />
+			</Grid.ColumnDefinitions>
+			<TextBox x:Name="Tbx_SoftwarePath" Grid.Column="0" IsReadOnly="True" />
+			<Button x:Name="Btn_Browse" Grid.Column="2" Content="Browse" Click="Btn_Browse_OnClick" />
+		</Grid>
+		<!-- Below is just a example placeholder. To modify the template string, please refer to KurobaChan/Translations/UIMsgs.resx -->
+		<TextBlock Grid.Row="2" x:Name="Tbk_LEDetected" TextWrapping="WrapWithOverflow" Margin="20" FontSize="10pt" Visibility="Collapsed">
+			Detected program with different code page from current system, which may require Locale Emulator to start:<LineBreak />
+			<LineBreak />
+			Program Name: Anata ni Koi Suru Ren'ai Recette (Le recette de mon amour pour toi)<LineBreak />
+			Original Code Page: ANSI/OEM 日本語; Japanese (Shift-JIS) (932)<LineBreak />
+			<LineBreak />
+			If the above information is incorrect, please submit an issue or a pull request on GitHub. Your action will help to improve user experience of KurobaChan.
+		</TextBlock>
+	</Grid>
+</Page>

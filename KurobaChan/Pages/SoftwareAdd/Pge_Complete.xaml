@@ -1,0 +1,21 @@
+<Page x:Class="KurobaChan.Pages.SoftwareAdd.Pge_Complete"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:KurobaChan.Pages.SoftwareAdd"
+      mc:Ignorable="d"
+      Height="415" Width="800">
+	<Grid>
+		<TextBlock x:Name="Tbk_Content" TextWrapping="WrapWithOverflow" FontSize="10pt" Margin="20">
+			The following program will be added:<LineBreak />
+			<LineBreak />
+			Program Name: {progName}<LineBreak />
+			Program Executable Path: {exePath}<LineBreak />
+			Main Window Class Name: {mWndClassName}<LineBreak />
+			Locale Emulator Support Status: {leSupport}<LineBreak />
+			<LineBreak />
+			Click "Finish" to finish the wizard and add the program to KurobaChan database.
+		</TextBlock>
+	</Grid>
+</Page>

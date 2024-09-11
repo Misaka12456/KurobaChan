@@ -1,0 +1,38 @@
+<Page x:Class="KurobaChan.Pages.SoftwareAdd.Pge_3WindowLocate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:KurobaChan.Pages.SoftwareAdd"
+      mc:Ignorable="d"
+      Height="415" Width="800" AllowDrop="True">
+	<Grid AllowDrop="True">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBlock x:Name="Tbk_Content" TextWrapping="Wrap" FontSize="10pt" Margin="20">
+			Time to start the target program.<LineBreak />
+			Please manually start the target program, and perform some operations (if needed) to make the program's main window visible.<LineBreak />
+			<LineBreak />
+			When the main window is visible, please click the Button below to refresh the window list, and select the program's main window from the list.<LineBreak />
+			Wizard will highlight the selected window (for 2 seconds), and display the class name of the window in the text box below. (Bold row is the most possible main window)<LineBreak />
+			<LineBreak />
+			If you're sure you selected the right window, click Next.
+		</TextBlock>
+		<Button Grid.Row="1" x:Name="Btn_Refresh" Margin="20,-10, 20, 10" Width="150" Height="30" HorizontalAlignment="Center"
+		        Content="Refresh Window List" Click="Btn_Refresh_OnClick" />
+		<ListBox Grid.Row="2" x:Name="Lbx_WindowList" Margin="20, 0, 20, 0" MaxHeight="125" MinHeight="125" SelectionMode="Single"
+		         SelectionChanged="Lbx_WindowList_OnSelectionChanged" />
+		<Grid Grid.Row="3" x:Name="Grd_ClassName" Margin="20">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock x:Name="Tbk_ClassName_Title" Text="Main Window Class Name:" VerticalAlignment="Center" />
+			<TextBox Grid.Column="1" x:Name="Tbx_ClassName" VerticalAlignment="Center" Margin="10, 0, 0, 0" IsReadOnly="True" />
+		</Grid>
+	</Grid>
+</Page>

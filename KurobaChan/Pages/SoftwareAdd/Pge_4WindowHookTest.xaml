@@ -1,0 +1,43 @@
+<Page x:Class="KurobaChan.Pages.SoftwareAdd.Pge_4WindowHookTest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:KurobaChan.Pages.SoftwareAdd"
+      mc:Ignorable="d"
+      Height="415" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="25px" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBlock x:Name="Tbk_Content" TextWrapping="WrapWithOverflow" FontSize="10pt" Margin="20">
+			Now we need to test the hotkey hook for the target program.<LineBreak />
+			<LineBreak />
+			Please close the program completely and open it again.<LineBreak />
+			When the program is running, please click the button below, then press K in the target program main window.<LineBreak />
+			<LineBreak />
+			If the text below show the title of the target window and the pressed 'K' key info, the hotkey hook is working.<LineBreak />
+			<LineBreak />
+			Please notice that ONLY the hotkey hook is working can the wizard continue.
+		</TextBlock>
+		<Button x:Name="Btn_TestHook" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"
+		        Height="25px" Width="150px" FontSize="10pt" Click="Btn_TestHook_OnClick">
+			<Button.ToolTip>
+				<TextBlock>
+					Click this button to test the hotkey hook.
+				</TextBlock>
+			</Button.ToolTip>
+			Test Hotkey Hook
+		</Button>
+		<Grid Grid.Row="2" Margin="20">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock Text="Hook Info:" FontSize="10pt" Margin="20,0,0,0" />
+			<TextBlock x:Name="Tbk_HookInfo" Grid.Column="1" FontSize="10pt" Margin="20,0,20,0" Height="100px" />
+		</Grid>
+	</Grid>
+</Page>

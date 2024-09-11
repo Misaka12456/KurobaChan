@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+        <UICulture>zh-hans</UICulture><!-- Default is Chinese (Simplified) -->
+        <StartupObject>KurobaChan.Program</StartupObject>
+        <AssemblyName>KurobaChan</AssemblyName>
+        <AssemblyTitle>KurobaChan Utility</AssemblyTitle>
+        <Company>Misaka Castle Group and KurobaChan contributors</Company>
+        <Copyright>(C)Copyright 2018-2024 Misaka Castle Group and all KurobaChan contributors. All rights reserved. Licensed under GNU General Public License v3.0.</Copyright>
+        <Version>0.1.0</Version>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>x64;arm64</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\GlobalMsgs.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GlobalMsgs.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Translations\UIMsgs.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UIMsgs.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\GlobalMsgs.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GlobalMsgs.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Translations\UIMsgs.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UIMsgs.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+      <PackageReference Include="MemoryPack" Version="1.21.1" />
+      <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="3.1.15" />
+      <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="System.Management" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="App.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Pages\SoftwareAdd\Pge_1SoftwareLocate.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Pages\SoftwareAdd\Pge_2LESupport.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Pages\SoftwareAdd\Pge_3WindowLocate.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Pages\SoftwareAdd\Pge_4WindowHookTest.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Pages\SoftwareAdd\Pge_Complete.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\Icon\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\KurobaChan.FixedData\KurobaChan.FixedData.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Icon\Drag.png" />
+      <EmbeddedResource Include="Resources\Icon\Drag.png" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,32 @@
+<Window x:Class="KurobaChan.Windows.Win_SoftwareAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:KurobaChan.Windows"
+        xmlns:pages="clr-namespace:KurobaChan.Pages.SoftwareAdd"
+        mc:Ignorable="d" Height="450" Width="800" AllowDrop="True" Closing="Win_SoftwareAdd_OnClosing">
+	<Grid AllowDrop="True">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" /><!-- other (max 95%) -->
+			<RowDefinition Height="5px" />
+			<RowDefinition Height="30px" />
+		</Grid.RowDefinitions>
+		<Frame Grid.Row="0" x:Name="Frme_Content" NavigationUIVisibility="Hidden" AllowDrop="True" />
+		
+		<Separator Grid.Row="1" />
+		
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+			<StackPanel.Resources>
+				<Style TargetType="{x:Type Button}">
+					<Setter Property="Margin" Value="0,0,20,0" />
+					<Setter Property="Width" Value="85" />
+					<Setter Property="Height" Value="25" />
+				</Style>
+			</StackPanel.Resources>
+			<Button x:Name="Btn_Prev" Content="Previous" Click="PreviousStep_Click" />
+			<Button x:Name="Btn_Next" Content="Next" Click="NextStep_Click" />
+			<Button x:Name="Btn_Cancel" Content="Cancel" Click="CancelOrFinish_Click" />
+		</StackPanel>
+	</Grid>
+</Window>

@@ -1,0 +1,27 @@
+<Page x:Class="KurobaChan.Pages.SoftwareAdd.Pge_2LESupport"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:KurobaChan.Pages.SoftwareAdd"
+      mc:Ignorable="d"
+      Height="415" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBlock x:Name="Tbk_Content" TextWrapping="Wrap" Margin="20" FontSize="10pt">
+			Locale Emulator is a tool that can run programs with different code page from current system's global code page by simulating region/language's code page environment.<LineBreak />
+			It is required to use Locale Emulator to run program with different code page (e.g. running native Japanese program with Shift-JIS(932) code page in Simplified Chinese environment).<LineBreak />
+			<LineBreak />
+			You need to download the tool here: https://github.com/xupefei/Locale-Emulator<LineBreak />
+			<LineBreak />
+			<LineBreak />
+			If you need to use Local Emulator to run this program, to prevent misjudging program's main window, you need to enable "Support for Locale Emulator".<LineBreak />
+			If your program does not need to use Locale Emulator, it is not recommended to enable this option.
+		</TextBlock>
+		<CheckBox Grid.Row="1" x:Name="Chk_LESupport" Content="Enable support for Locale Emulator (only for this program)" Margin="20" FontSize="10pt" Checked="Chk_LESupport_OnChecked"
+		          Unchecked="Chk_LESupport_OnUnchecked" />
+	</Grid>
+</Page>

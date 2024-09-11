@@ -1,0 +1,73 @@
+<Window x:Class="KurobaChan.Windows.Win_Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:KurobaChan.Windows"
+        xmlns:enumerator="clr-namespace:KurobaChan.Enumerator"
+        mc:Ignorable="d"
+        Title="KurobaChan" Height="720" Width="1280" Closing="Win_Main_OnClosing">
+	<Window.Resources>
+		<enumerator:WindowStatusConverter x:Key="WindowStatusConverter" />
+	</Window.Resources>
+	<Window.InputBindings>
+		<KeyBinding Command="{Binding HotKeyRefreshCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+		            Key="F5" />
+	</Window.InputBindings>
+	<Grid>
+	    <Grid.RowDefinitions>
+		    <RowDefinition Height="25pt" />
+		    <RowDefinition Height="*" />
+		    <RowDefinition Height="Auto" />
+	    </Grid.RowDefinitions>
+	    <Menu FontSize="10pt" Height="25pt">
+		    <MenuItem Header="File" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="25pt">
+			    <MenuItem Header="Add program..." Click="AddProgram_OnClick" />
+			    <Separator />
+			    <MenuItem Header="Load Profile..." />
+			    <MenuItem Header="Save Profile..." />
+			    <Separator />
+			    <MenuItem Header="Exit" />
+		    </MenuItem>
+		    <MenuItem Header="Quick Operation" VerticalAlignment="Center" VerticalContentAlignment="Center">
+			    <MenuItem Header="Hide All Running Programs Windows" />
+			    <MenuItem Header="Set Running Program List Style">
+					<MenuItem Header="Details List" />
+					<MenuItem Header="Icons Grid" />
+			    </MenuItem>
+			</MenuItem>
+		    <MenuItem Header="Preferences" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+		    <MenuItem Header="Help" VerticalAlignment="Center" VerticalContentAlignment="Center">
+			    <MenuItem Header="KurobaChan on GitHub" />
+			    <Separator />
+			    <MenuItem Header="About KurobaChan" />
+		    </MenuItem>
+	    </Menu>
+		<Grid Grid.Row="1">
+			<!-- Details list (table-like) or Icon list (grid-like) place here (TODO) -->
+			<DataGrid x:Name="Dgrd_RunningPrograms" AutoGenerateColumns="False" ItemsSource="{Binding SoftwareInstanceList, RelativeSource={RelativeSource AncestorType=Window}}" 
+			          FontSize="10pt" Visibility="Visible" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserDeleteRows="False"
+			          CanUserResizeRows="False" CanUserSortColumns="False">
+				<DataGrid.Resources>
+					<Style TargetType="DataGridRow">
+						<EventSetter Event="MouseDoubleClick" Handler="DataGrid_SoftwareInstance_DoubleClick" />
+					</Style>
+				</DataGrid.Resources>
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Name" Binding="{Binding Metadata.Name, Mode=OneWay}" Width="Auto" />
+					<DataGridTextColumn Header="Window Handle IntPtr" Binding="{Binding WindowHandleNumeric, Mode=OneWay}" Width="Auto" />
+					<DataGridTextColumn Header="Pid" Binding="{Binding ProcInstance.Id, Mode=OneWay}" Width="Auto" />
+					<DataGridTextColumn Header="Status" Binding="{Binding Status, Mode=OneWay, Converter={StaticResource WindowStatusConverter}}" Width="Auto" />
+				</DataGrid.Columns>
+			</DataGrid>
+		</Grid>
+		<StatusBar Grid.Row="2" FontSize="10pt">
+			<StatusBarItem x:Name="Sbi_Status">Ready</StatusBarItem>
+			<Separator />
+			<StatusBarItem x:Name="Sbi_HookerStatus">Hooker ({hookId}) Ready</StatusBarItem>
+			<Separator />
+			<StatusBarItem x:Name="Sbi_OpHint">Double-click to show program window and focus; right-click to show context menu</StatusBarItem>
+			<StatusBarItem x:Name="Sbi_ProgramStatus" HorizontalAlignment="Right" >Program(s): {0} Running, {1} Total</StatusBarItem>
+		</StatusBar>
+	</Grid>
+</Window>

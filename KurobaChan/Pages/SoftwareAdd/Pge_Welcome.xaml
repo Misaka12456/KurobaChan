@@ -1,0 +1,21 @@
+<Page x:Class="KurobaChan.Pages.SoftwareAdd.Pge_Welcome"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:KurobaChan.Pages.SoftwareAdd"
+      mc:Ignorable="d"
+      Height="415" Width="800">
+	<Grid>
+		<TextBlock x:Name="Tbk_Content" TextWrapping="Wrap" Margin="20" FontSize="10pt">
+			Welcome to KurobaChan Program Add wizard.<LineBreak />
+			<LineBreak />
+			The wizard will help you to add a new external program to database, which window can be hidden and shown by KurobaChan.<LineBreak />
+			<LineBreak />
+			If you're ready, click "Next".<LineBreak />
+			<LineBreak />
+			Note: It is required to start the target program at least once for necessary information to be collected during wizard process.<LineBreak />
+			If you want to add a program that is not suitable to start in current environment (e.g. adding NSFW game in work environment), please close this wizard and wait for appropriate time to start again.
+		</TextBlock>
+	</Grid>
+</Page>

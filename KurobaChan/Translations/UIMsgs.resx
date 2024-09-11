@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+    <data name="Win_SoftwareAdd.Title" xml:space="preserve">
+        <value>添加程序 - KurobaChan</value>
+    </data>
+    <data name="Pge_Welcome.Content" xml:space="preserve">
+        <value>欢迎来到KurobaChan程序添加向导。
+
+该向导将允许您将一个新的外部程序添加到数据库中，以便通过KurobaChan来隐藏和显示它的主窗口。
+
+如果您已准备就绪，请点击“下一步”。
+
+注意：在向导过程中，您将会被要求至少启动一次目标程序，以便收集必要的信息。
+若您想要添加一个在当前环境下不适合启动的程序（例如在工作环境中添加NSFW游戏），请关闭此向导并等待合适的时机再启动该向导。</value>
+    </data>
+    <data name="Pge_1SoftwareLocate.Content" xml:space="preserve">
+        <value>请选择您要添加的外部程序的位置。
+如果指定程序需要使用Locale Emulator运行，此处指定的仍是程序的实际位置。稍后将需要启用Locale Emulator的支持。</value>
+    </data>
+    <data name="Pge_1SoftwareLocate.Browse" xml:space="preserve">
+        <value>浏览...</value>
+    </data>
+    <data name="Pge_1SoftwareLocate.LENotice" xml:space="preserve">
+        <value>检测到与系统当前代码页不同的程序，其可能需要使用Locale Emulator启动：
+程序名: {0}
+原始代码页: {1}
+若以上信息不准确，烦请在GitHub中提交一个Issue或者Pull Request。您的举措将有助于改进KurobaChan的用户体验。</value>
+    </data>
+    <data name="Pge_2LESupport.Content" xml:space="preserve">
+        <value>Locale Emulator是一个能够通过模拟区域/语言的代码页环境来运行与系统当前的全局代码页不同的程序的工具。
+对于跨代码页的情况(如在简体中文环境下运行代码页为Shift-JIS(932)的原生日文程序)，需要使用Locale Emulator来运行程序。
+该工具需要前往 https://github.com/xupefei/Locale-Emulator 下载。
+
+如果您需要使用Locale Emulator来运行此程序，为了防止误判程序主窗口，需要启用“对Locale Emulator的支持”。
+如果您的程序不需要使用Locale Emulator，不建议启用此选项。</value>
+    </data>
+    <data name="Pge_2LESupport.CheckBox" xml:space="preserve">
+        <value>启用对Locale Emulator的支持(仅该程序)</value>
+    </data>
+    <data name="Pge_3WindowLocate.Content" xml:space="preserve">
+        <value>是时候启动目标程序了。
+请手动启动目标程序，并进行一些操作（如必需）使程序的主窗口可见。
+ 
+当主窗口可见时，请点击下方按钮以刷新窗口列表，并从列表中选择程序的主窗口。
+向导将会高亮选中的窗口（持续2秒），并在下方文本框中显示窗口的类名。（加粗的行是最可能的主窗口）
+
+如果您确定选择了正确的窗口，请点击“下一步”。</value>
+    </data>
+    <data name="Pge_3WindowLocate.MainWindowClassName" xml:space="preserve">
+        <value>主窗口类名:</value>
+    </data>
+    <data name="Pge_4WindowHookTest.Content" xml:space="preserve">
+        <value>现在我们需要测试目标程序的热键钩子(HotKey Hook)。
+
+请关闭并重新启动目标程序。
+当程序运行时，请点击下方按钮，然后在目标程序主窗口中按下K键。
+
+若热键钩子正常工作，则下方文本将会显示目标窗口的标题和按下的K键信息。
+
+请注意: 仅当热键钩子正常工作时，向导才能继续。</value>
+    </data>
+    <data name="Pge_4WindowHookTest.Button" xml:space="preserve">
+        <value>测试热键钩子</value>
+    </data>
+    <data name="Pge_Complete.Content" xml:space="preserve">
+        <value>以下程序将会被添加：
+
+程序名: {0}
+可执行文件路径: {1}
+主窗口类名: {2}
+Locale Emulator支持状态: {3}
+
+点击“完成”以结束向导并将程序添加到KurobaChan数据库。</value>
+    </data>
+    <data name="Globals.Warning" xml:space="preserve">
+        <value>警告</value>
+    </data>
+    <data name="Win_SoftwareAdd.Cancel" xml:space="preserve">
+        <value>向导尚未完成。确实要退出向导吗？</value>
+    </data>
+    <data name="Globals.Quit" xml:space="preserve">
+        <value>您确定要退出KurobaChan吗？
+出于安全考虑，KurobaChan退出前将会显示所有隐藏的窗口。</value>
+    </data>
+</root>

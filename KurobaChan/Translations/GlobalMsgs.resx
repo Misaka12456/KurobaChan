@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="CmdArgUsage" xml:space="preserve">
+        <value>用法: KurobaChan [选项]
+
+可选选项:
+--service   以服务模式(静默模式)启动
+--show      显示正在运行的KurobaChan实例的主窗口(若启用了"增强安全模式"，则该选项将不起作用)
+--help      显示帮助信息</value>
+    </data>
+    <data name="CmdArgUsage.Title" xml:space="preserve">
+        <value>KurobaChan 命令行参数说明</value>
+    </data>
+    <data name="CmdArgUsage.UnknownArgPrefix" xml:space="preserve">
+        <value>未知的命令行参数: {argument}</value>
+    </data>
+    <data name="StartError.Permission.UAC" xml:space="preserve">
+        <value>请求的操作需要提升后的权限。
+请尝试使用管理员权限运行KurobaChan。</value>
+    </data>
+    <data name="FirstStart.UserAgreement" xml:space="preserve">
+        <value>您知晓 KurobaChan 需要通过Win32 API以“低级键盘钩子”(Low-Level Keyboard Hook)方式工作。
+低级键盘钩子将会捕获用户输入的一切数据，但工作原理保证 KurobaChan 除设定的热键外，其它所键入的任何按键本程序都不会作记录。
+详细隐私政策可见：https://go.misakacastle.moe/?fwd=krb_privacy_policy
+如对此有疑虑，您可以选择单击“否”放弃使用本程序。
+您确定同意上述隐私政策并继续吗？
+(此消息只会在初次启动或隐私政策发生变更时显示)</value>
+    </data>
+</root>

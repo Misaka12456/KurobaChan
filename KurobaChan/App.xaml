@@ -1,0 +1,19 @@
+<Application
+	x:Class="KurobaChan.App"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:KurobaChan.Windows"
+	xmlns:softwareAdd="clr-namespace:KurobaChan.Pages.SoftwareAdd">
+    
+	<Application.Resources>
+		<!-- 在这里添加应用程序级别的资源 -->
+		<!-- 例如，字符串资源、样式等 -->
+		<ResourceDictionary>
+			<DataTemplate DataType="{x:Type softwareAdd:Pge_Welcome}">
+				<softwareAdd:Pge_Welcome/>
+			</DataTemplate>
+            
+			<!-- 其他页面的数据模板 -->
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>
